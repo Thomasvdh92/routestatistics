@@ -67,7 +67,8 @@ public class XmlIteratorForDevices {
                         if(String.valueOf(element.getAttribute("id")).equals(d.getDevId())) {
                             NodeList detectionNodeList = element.getElementsByTagName("rdd");
                             if (detectionNodeList.getLength() > 1) {
-                                spanCollection.compileRoutes(d, detectionNodeList);
+//                                spanCollection.compileRoutes(d, detectionNodeList);
+                                spanCollection.gatherDetections(d, detectionNodeList);
                             }
                             iter.remove();
                         }
@@ -111,7 +112,7 @@ public class XmlIteratorForDevices {
 
 
                 }
-                if (devices.size() == 10) break;
+                if (devices.size() == 30) break;
             }
 
 

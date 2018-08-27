@@ -21,9 +21,13 @@ public class SpanCollection {
     @Getter
     private List<DeviceRoutes> deviceRoutesCollection;
 
+    @Getter
+    private List<Device> devices;
+
     public SpanCollection() {
         buildWeekDays();
         deviceRoutesCollection = new ArrayList<>();
+        devices = new ArrayList<>();
     }
 
     private void buildWeekDays() {
@@ -75,6 +79,19 @@ public class SpanCollection {
                     drd.setMaximumTime(drd.calculateMaximumTime(drd.getTotalHits(), drd.getSum(), drd.getSumSquared()));
                 }
             }
+        }
+    }
+
+    public void gatherDetections(Device device, NodeList detectionsNodeList) {
+        if(!devices.contains(device)){
+            devices.add(device);
+        }
+        int index = devices.indexOf(device);
+        for(int i=0;i<detectionsNodeList.getLength();i++){
+            LocalDateTime ldt = getDateFromNodeList(detectionsNodeList, i);
+            Detector d = getDetectorFromNodeList(detectionsNodeList, i);
+            Detection detection = new Detection(ldt, d);
+            devices.get(index).addDetections(detection);
         }
     }
 

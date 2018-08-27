@@ -2,6 +2,9 @@ package com.tdimco.routestatistics.domain;
 
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Thomas on 18-3-2018.
  */
@@ -12,8 +15,11 @@ public class Device {
 
     private VehicleType vehicleType;
 
+    private List<Detection> detections;
+
     public Device(String devId) {
         this.devId =devId;
+        detections = new ArrayList<>();
     }
 
     public Device(String devId, String vehicleType) {
@@ -29,6 +35,26 @@ public class Device {
                 this.vehicleType = VehicleType.T;
                 break;
         }
+    }
+
+    public void addDetections(Detection detection) {
+        if(detections == null) {
+            detections = new ArrayList<>();
+            detections.add(detection);
+        } else if(!detections.get(detections.size()-1).getLdt().isAfter(detection.getLdt())) {
+            detections.add(detection);
+        }
+    }
+
+    public String printDetections() {
+        StringBuilder r = new StringBuilder("Device{" +
+                "devId='" + devId + '\'' +
+                ", vehicleType=" + vehicleType +
+                '}');
+        for(int i =0;i<detections.size();i++) {
+            r.append(detections.get(i).toString());
+        }
+        return r.toString();
     }
 
     @Override
