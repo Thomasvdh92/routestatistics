@@ -6,10 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Thomas on 18-3-2018.
+ * A device is a bluetooth device inside a vehicle. Such a device contains a device-id, which is a unique number
+ * identifying the device. It also contains a vehicletype, which is linked to the Enum vehicle type. Last, it contains
+ * a list of detections for this device.
  */
-@Data
-public class Device {
+public @Data class Device {
 
     private String devId;
 

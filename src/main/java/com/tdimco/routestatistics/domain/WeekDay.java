@@ -12,8 +12,10 @@ import java.util.List;
 @Data
 public class WeekDay {
 
+    // Which day of the week it represents
     private DayOfWeek dayOfWeek;
 
+    // A list of hours in a day, so obviously 24 hours
     private List<Hour> hours;
 
     public WeekDay(DayOfWeek dayOfWeek) {

@@ -24,6 +24,7 @@ public class Hour {
 
     public Hour(int hourNumber) {
         this.hourNumber = hourNumber;
+        this.hourTotalHits = 0;
         hourCollection = new HashMap<>();
     }
 
@@ -34,15 +35,15 @@ public class Hour {
      * @param secondIteration Boolean to determine the iteration
      */
     public void addTimeToDrd(Route r, double seconds, boolean secondIteration) {
-        if(!hourCollection.containsKey(r)){
-            hourCollection.put(r, new DayRouteData());
+        if(!this.hourCollection.containsKey(r)){
+            this.hourCollection.put(r, new DayRouteData());
         }
-        hourCollection.get(r).addTimeToDayRouteData(seconds,secondIteration);
+        this.hourCollection.get(r).addTimeToDayRouteData(seconds,secondIteration);
     }
 
     public void addDrd(Route r, DayRouteData drd) {
-        if(!hourCollection.containsKey(r)) {
-            hourCollection.put(r, drd);
+        if(!this.hourCollection.containsKey(r)) {
+            this.hourCollection.put(r, drd);
         }
     }
 
@@ -52,10 +53,10 @@ public class Hour {
     public void setTotals() {
         double totalOfSums=0, totalOfSumSquared = 0;
         int secondToHours = 3600;
-        for(Route r : hourCollection.keySet()) {
-            DayRouteData drd = hourCollection.get(r);
+        for(Route r : this.hourCollection.keySet()) {
+            DayRouteData drd = this.hourCollection.get(r);
             totalOfSums += drd.getSecondSum();
-            hourTotalHits += drd.getSecondTotalHits();
+            this.hourTotalHits += drd.getSecondTotalHits();
             totalOfSumSquared += drd.getSecondSquared();
         }
         totalSumInHours = totalOfSums / secondToHours;

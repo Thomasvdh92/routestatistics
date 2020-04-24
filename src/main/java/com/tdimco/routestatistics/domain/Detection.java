@@ -8,7 +8,6 @@ import java.time.LocalDateTime;
 @Data
 public class Detection {
 
-
     private LocalDateTime ldt;
     private Detector detector;
 

@@ -1,7 +1,8 @@
 package com.tdimco.routestatistics.domain;
 
 import com.tdimco.routestatistics.dataaccess.RouteStatisticsDAO;
-import lombok.Getter;
+import com.tdimco.routestatistics.dataaccess.RouteStatisticsMapper;
+import lombok.Data;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
@@ -12,16 +13,14 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
+@Data
 public class SpanCollection {
 
-    @Getter
+    // A list containing all the weekdays
     private List<WeekDay> weekDays;
-    @Getter
-    private List<DeviceRoutes> deviceRoutesCollection;
 
-    @Getter
+    private List<DeviceRoutes> deviceRoutesCollection;
     private List<Device> devices;
 
     public SpanCollection() {
@@ -30,6 +29,7 @@ public class SpanCollection {
         devices = new ArrayList<>();
     }
 
+    // Build a list of weekdays using a custom domain class and java's DayOfWeek library
     private void buildWeekDays() {
         weekDays = new ArrayList<>();
         for(DayOfWeek d : DayOfWeek.values()) {
@@ -37,6 +37,12 @@ public class SpanCollection {
         }
     }
 
+    /**
+     * Generates a route and a time using the detections passed to this method.
+     * @param detection1
+     * @param detection2
+     * @param secondIteration
+     */
     public void addRouteDetection(Element detection1, Element detection2, boolean secondIteration) {
         Detector d1 = new Detector(Integer.parseInt(detection1.getAttribute("d")));
         Detector d2 = new Detector(Integer.parseInt(detection2.getAttribute("d")));
@@ -44,9 +50,18 @@ public class SpanCollection {
         LocalDateTime date1 = getDateFromDetection(detection1);
         LocalDateTime date2 = getDateFromDetection(detection2);
         double seconds = date1.until(date2, ChronoUnit.SECONDS);
-        getHourAndAddTime(secondIteration, r, seconds, date1);
+        if(seconds < 7200) {
+            getHourAndAddTime(secondIteration, r, seconds, date1);
+        }
     }
 
+    /**
+     * Gets the weekday and hour from the date and adds the time to the that hour of that weekday for that route
+     * @param secondIteration
+     * @param r
+     * @param seconds
+     * @param date
+     */
     private void getHourAndAddTime(boolean secondIteration, Route r, double seconds, LocalDateTime date) {
         WeekDay wd = new WeekDay(date.getDayOfWeek());
         int hour =  date.getHour();
@@ -96,27 +111,29 @@ public class SpanCollection {
     }
 
     public void compileRoutes(Device device, NodeList detectionNodeList) {
+        if(detectionNodeList.getLength() <= 1) return;
 
         int startDetec = 0;
         List<Detector> detectors = new ArrayList<>();
         detectors.add(getDetectorFromNodeList(detectionNodeList, startDetec));
         for(int currentDetec=1;currentDetec<detectionNodeList.getLength();currentDetec++) {
+            // If detec 0 and 1 are equal, dont make a route
             if(!getDetectorFromNodeList(detectionNodeList, startDetec).equals(getDetectorFromNodeList(detectionNodeList, currentDetec)) &&
+                    // If detector currently evaluated and previous detector are the same, dont make a route
                     !getDetectorFromNodeList(detectionNodeList, currentDetec-1).equals(getDetectorFromNodeList(detectionNodeList, currentDetec))) {
 
                 if (isViableRouteTime(detectionNodeList, startDetec, currentDetec)) {
                     detectors.add(getDetectorFromNodeList(detectionNodeList, currentDetec));
-                    int detectionsize = detectionNodeList.getLength();
                     if(currentDetec == detectionNodeList.getLength()-1 && detectors.size() > 1) {
                         int endDetec = currentDetec - 1;
                         double seconds = getDateFromNodeList(detectionNodeList, startDetec).until(getDateFromNodeList(detectionNodeList, endDetec), ChronoUnit.SECONDS);
-                        if(TimeUnit.SECONDS.toHours((long)seconds) < 5) continue;
+                        if(seconds > 7200) continue;
                         passOnListToDeviceRoute(getDateFromNodeList(detectionNodeList, startDetec), device, detectors, seconds);
                     }
                 } else if(detectors.size() > 1) {
                     int endDetec = currentDetec - 1;
                     double seconds = getDateFromNodeList(detectionNodeList, startDetec).until(getDateFromNodeList(detectionNodeList, endDetec), ChronoUnit.SECONDS);
-                    if(TimeUnit.SECONDS.toHours((long)seconds) > 5) continue;
+                    if(seconds > 7200) continue;
                     passOnListToDeviceRoute(getDateFromNodeList(detectionNodeList, startDetec), device, detectors, seconds);
                     detectors = new ArrayList<>();
                     startDetec = currentDetec;
@@ -155,10 +172,15 @@ public class SpanCollection {
         Hour hour = new Hour(hourNumber);
         Route r = new Route(d1, d2);
         RouteStatistics routeStatistics = new RouteStatistics(new WeekDay(dayOfWeek), hour, r);
-        RouteStatistics result = new RouteStatisticsDAO().read(routeStatistics);
-        DayRouteData drd = result.getHour().getHourCollection().get(r);
-        if (drd.getTotalHits() ==1 || drd.getMaximumTime() == 0) return false;
-        return seconds < drd.getMaximumTime();
+        RouteStatistics result = new RouteStatisticsMapper().find(routeStatistics);
+        DayRouteData drd;
+        try {
+            drd = result.getHour().getHourCollection().get(r);
+            if (drd.getSecondTotalHits() ==1 || drd.getSecondMaxTime() == 0) return false;
+            return seconds < drd.getSecondMaxTime();
+        } catch (NullPointerException e) {
+            return false;
+        }
     }
 
     private Detector getDetectorFromNodeList(NodeList detectionNodeList, int i) {

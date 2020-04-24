@@ -1,14 +1,12 @@
 package com.tdimco.routestatistics.domain;
 
+import lombok.Data;
+
 /**
  * Created by Thomas on 18-3-2018.
  */
-public class Detector implements Comparable<Detector>{
-
-    public int getDetectorId() {
-        return detectorId;
-    }
-
+public @Data
+class Detector implements Comparable<Detector>{
 
     private Integer detectorId;
     private double x;
@@ -45,9 +43,9 @@ public class Detector implements Comparable<Detector>{
         int result;
         long temp;
         result = detectorId != null ? detectorId.hashCode() : 0;
-        temp = Double.doubleToLongBits(x);
+        temp = Double.doubleToLongBits(this.x);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
-        temp = Double.doubleToLongBits(y);
+        temp = Double.doubleToLongBits(this.y);
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
     }

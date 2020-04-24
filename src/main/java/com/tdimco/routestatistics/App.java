@@ -2,10 +2,10 @@ package com.tdimco.routestatistics;
 
 import com.tdimco.routestatistics.dataaccess.SpanCollectionDao;
 import com.tdimco.routestatistics.datareading.XmlIterator;
-import com.tdimco.routestatistics.domain.Hour;
-import com.tdimco.routestatistics.domain.Route;
-import com.tdimco.routestatistics.domain.RouteStatistics;
-import com.tdimco.routestatistics.domain.WeekDay;
+import com.tdimco.routestatistics.domain.*;
+
+import java.io.IOException;
+import java.util.List;
 
 /**
  * Hello world!
@@ -20,18 +20,13 @@ public class App {
         XmlIterator xmlIterator = new XmlIterator();
         iterateXml(xmlIterator, xmlMonthMay, true);
 
-//        for(WeekDay wd : xmlIterator.getSpanCollection().getWeekDays()) {
-//            if(wd.getDayOfWeek().toString().equals("SATURDAY")) {
-//                for(Hour h : wd.getHours()) {
-//                    for(Route r : h.getHourCollection().keySet()) {
-//                        if(r.toString().startsWith("532") && r.toString().endsWith("1046")) System.out.println(h.getHourCollection().get(r).toString());
-//                    }
-//                }
-//            }
-//        }
-
         SpanCollectionDao spanCollectionDao = new SpanCollectionDao();
-        spanCollectionDao.create(xmlIterator.getSpanCollection());
+        try {
+            spanCollectionDao.WriteExcel(xmlIterator.getSpanCollection());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+//        spanCollectionDao.create(xmlIterator.getSpanCollection());
 
     }
 
@@ -43,9 +38,7 @@ public class App {
         long startTime = System.currentTimeMillis();
         if (iterateFolder) {
             xmlIterator.iterateXmlFolder(xmlUrl, false);
-            xmlIterator.getSpanCollection().determineMaximumTimeForDrd(false);
             xmlIterator.iterateXmlFolder(xmlUrl, true);
-            xmlIterator.getSpanCollection().determineMaximumTimeForDrd(true);
         } else {
             xmlIterator.iterateXmlFile(xmlUrl, false);
             xmlIterator.iterateXmlFile(xmlUrl, true);

@@ -40,17 +40,16 @@ public class DeviceRoutes {
 
     @Override
     public String toString() {
-        String s = device.toString();
+        StringBuilder s = new StringBuilder(device.toString());
         for(DeviceRoute dr : routes) {
-            s += dr.toString() + " ";
+            s.append(dr.toString()).append(" ");
         }
-        return s;
+        return s.toString();
     }
 
     @Data
     public static class DeviceRoute {
-        //TODO defaq waarom werkt het met een int array wel dfsgsfasdfsfgh...
-        /** TODO
+         /**
          * Moment van binnenkomen - Weekdag, tijdstip en detector
          * Moment van verlaten - Weekdag, tijdstip en detector
          */
