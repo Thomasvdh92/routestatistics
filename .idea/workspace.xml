@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="c1219936-0427-4c1b-b582-47e044f1cabe" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/AppCreateDeviceRoutes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/dataaccess/IMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/dataaccess/RouteStatisticsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/testapp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_16_20.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_10.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routestatistics.iml" beforeDir="false" afterPath="$PROJECT_DIR$/routestatistics.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/dataaccess/RouteStatisticsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/dataaccess/RouteStatisticsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/dataaccess/SpanCollectionDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/dataaccess/SpanCollectionDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/datareading/XmlIterator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/datareading/XmlIterator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/domain/Detection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/domain/Detection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/domain/Detector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/domain/Detector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/domain/Device.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/domain/Device.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/domain/DeviceRoutes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/domain/DeviceRoutes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/domain/Hour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/domain/Hour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/domain/SpanCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/domain/SpanCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/domain/WeekDay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/domain/WeekDay.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1aq6mNwL0xR6B47EknZHPItQfpX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1587450196910" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../WvdhDatareaderPython" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15332031" />
+    <property name="project.structure.side.proportion" value="0.23738532" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.tdimco.routestatistics.domain" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.tdimco.routestatistics.excelwriters" />
+      <recent name="com.tdimco.routestatistics.converters" />
+      <recent name="com.tdimco.routestatistics.domain" />
+      <recent name="com.tdimco.routestatistics.dataaccess" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Data Haven Bedrijf\routestatistics\src\main" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.App">
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="App" type="Application" factoryName="Application" singleton="true" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tdimco.routestatistics.App" />
+      <module name="routestatistics" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tdimco.routestatistics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppCreateDeviceRoutes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tdimco.routestatistics.AppCreateDeviceRoutes" />
+      <module name="routestatistics" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tdimco.routestatistics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppDeviceRouteCreater" type="Application" factoryName="Application" singleton="true" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tdimco.routestatistics.AppDeviceRouteCreater" />
+      <module name="routestatistics" />
+      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tdimco.routestatistics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Route" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tdimco.routestatistics.domain.Route" />
+      <module name="routestatistics" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tdimco.routestatistics.domain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="testapp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.tdimco.routestatistics.testapp" />
+      <module name="routestatistics" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tdimco.routestatistics.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType">
+      <module name="" />
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <option name="PROGRAM_PARAMETERS" />
+      <predefined_log_file enabled="true" id="idea.log" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.App" />
+      <item itemvalue="Application.Route" />
+      <item itemvalue="Application.AppDeviceRouteCreater" />
+      <item itemvalue="Application.AppCreateDeviceRoutes" />
+      <item itemvalue="Application.testapp" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+        <item itemvalue="Application.AppCreateDeviceRoutes" />
+        <item itemvalue="Application.testapp" />
+        <item itemvalue="Application.AppDeviceRouteCreater" />
+        <item itemvalue="Application.Route" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c1219936-0427-4c1b-b582-47e044f1cabe" name="Default" comment="" />
+      <created>1533814744785</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1533814744785</updated>
+      <workItem from="1533814747928" duration="8840000" />
+      <workItem from="1533909282197" duration="3110000" />
+      <workItem from="1534248791366" duration="14117000" />
+      <workItem from="1534679770375" duration="2002000" />
+      <workItem from="1534946719836" duration="3729000" />
+      <workItem from="1535377379961" duration="5263000" />
+      <workItem from="1535621006985" duration="12803000" />
+      <workItem from="1545642452945" duration="98000" />
+      <workItem from="1545920423125" duration="4683000" />
+      <workItem from="1545981500613" duration="599000" />
+      <workItem from="1550148861351" duration="132000" />
+      <workItem from="1550149014166" duration="2591000" />
+      <workItem from="1550236019456" duration="629000" />
+      <workItem from="1550237564066" duration="10000" />
+      <workItem from="1587383173612" duration="1065000" />
+      <workItem from="1587384271467" duration="4418000" />
+      <workItem from="1587449577307" duration="114000" />
+      <workItem from="1587449719280" duration="739000" />
+      <workItem from="1587450944237" duration="103000" />
+      <workItem from="1587451069904" duration="1917000" />
+      <workItem from="1587455666616" duration="2006000" />
+      <workItem from="1587462156625" duration="11041000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1877" height="205" key="GridCell.Tab.0.bottom" timestamp="1587475952931">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="205" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587475952931" />
+    <state width="1877" height="205" key="GridCell.Tab.0.center" timestamp="1587475952931">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="205" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587475952931" />
+    <state width="1877" height="205" key="GridCell.Tab.0.left" timestamp="1587475952930">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="205" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587475952930" />
+    <state width="1877" height="205" key="GridCell.Tab.0.right" timestamp="1587475952931">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="205" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587475952931" />
+    <state width="1877" height="338" key="GridCell.Tab.1.bottom" timestamp="1587474044267">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.1.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587474044267" />
+    <state width="1877" height="338" key="GridCell.Tab.1.center" timestamp="1587474044267">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.1.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587474044267" />
+    <state width="1877" height="338" key="GridCell.Tab.1.left" timestamp="1587474044267">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.1.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587474044267" />
+    <state width="1877" height="338" key="GridCell.Tab.1.right" timestamp="1587474044267">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="338" key="GridCell.Tab.1.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587474044267" />
+    <state x="440" y="94" key="SettingsEditor" timestamp="1587473432815">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587473432815" />
+    <state width="968" height="528" key="XDebugger.FullValuePopup" timestamp="1587459792265">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="968" height="528" key="XDebugger.FullValuePopup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587459792265" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1587473723188">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587473723188" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1587451714748">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587451714748" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/tdimco/routestatistics/dataaccess/SpanCollectionDao.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="xmlIterator.spanCollection.weekDays.get(5).hours.get(13).totalAverageInMinutes" />
+        <watch expression="xmlIterator.spanCollection.weekDays.get(5).hours" />
+        <watch expression="r" />
+        <watch expression="xmlIterator.spanCollection.weekDays.get(0)" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>
